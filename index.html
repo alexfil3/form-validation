@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alex Filimonov">
+    <meta name="description" content="Simple form with custom validation">
+    <link rel="stylesheet" href="style.css">
+    <title>Validation form</title>
+</head>
+<body>
+    <div class="container">
+        <form novalidate>
+            <div>
+                <label for="email">Email<span aria-label="required">*</span></label>
+                <input type="email" id="email" name="email" required minlength="3">
+                <p></p>
+            </div>
+            <div>
+                <label for="country">Country<span aria-label="required">*</span></label>
+                <input type="text" id="country" name="country" required minlength="2">
+                <p></p>
+            </div>
+            <div>
+                <label for="zip-code">Zip-code<span aria-label="required">*</span></label>
+                <input type="text" id="zip-code" name="zip-code" required>
+                <p></p>
+            </div>
+            <div>
+                <label for="pwd">Password<span aria-label="required">*</span></label>
+                <input type="password" id="pwd" name="pwd" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                <p></p>
+            </div>
+            <div>
+                <label for="pwd-conf">Password confirmation<span aria-label="required">*</span></label>
+                <input type="password" id="pwd-conf" name="pwd-conf" required>
+                <p></p>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
